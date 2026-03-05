@@ -7,8 +7,11 @@ def add_guest():
     name = input("Enter guest name: ")
     name = name.strip().title()
 
+    # Check if empty
+    if not name:
+        print("Cant add empty name!")
     # Check for duplicates
-    if name in guests:
+    elif name in guests:
         print(f"{name} is already in the list!")
     else:
         guests.append(name)
@@ -16,5 +19,5 @@ def add_guest():
 
 
 # Test
-add_guest()  # same name twice
+add_guest()  # press enter
 print("Guests:", guests)
