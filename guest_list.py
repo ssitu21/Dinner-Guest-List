@@ -4,11 +4,13 @@ guests = []
 
 
 def add_guest():
-    name = input("Enter guest name: ")
+    name = input("Enter guests name: ")
+    # Clean up the name
+    name = name.strip().title()
     guests.append(name)
     print(f"Added {name} to the list")
 
 
-# test
+# Test
 add_guest()
-print("Current guests:", guests)
+print("Guests:", guests)
