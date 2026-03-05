@@ -4,13 +4,17 @@ guests = []
 
 
 def add_guest():
-    name = input("Enter guests name: ")
-    # Clean up the name
+    name = input("Enter guest name: ")
     name = name.strip().title()
-    guests.append(name)
-    print(f"Added {name} to the list")
+
+    # Check for duplicates
+    if name in guests:
+        print(f"{name} is already in the list!")
+    else:
+        guests.append(name)
+        print(f"Added {name} to the list")
 
 
 # Test
-add_guest()
+add_guest()  # same name twice
 print("Guests:", guests)
