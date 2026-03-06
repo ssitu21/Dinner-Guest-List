@@ -7,10 +7,8 @@ def add_guest():
     name = input("Enter guest name: ")
     name = name.strip().title()
 
-    # Check if empty
     if not name:
         print("Cant add empty name!")
-    # Check for duplicates
     elif name in guests:
         print(f"{name} is already in the list!")
     else:
@@ -18,6 +16,15 @@ def add_guest():
         print(f"Added {name} to the list")
 
 
+def show_guests():
+    if not guests:
+        print("Guest list is empty")
+    else:
+        print("\nCurrent Guests:")
+        for i, guest in enumerate(guests, 1):
+            print(f"{i}. {guest}")
+
+
 # Test
-add_guest()  # press enter
-print("Guests:", guests)
+add_guest()
+show_guests()
