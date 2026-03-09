@@ -36,15 +36,37 @@ def show_guests():
     if not guests:
         print("Guest list is empty")
     else:
-        print("\nCurrent Guests:")
+        print(f"\nTotal guests: {len(guests)}")
         for i, guest in enumerate(guests, 1):
             print(f"{i}. {guest}")
 
 
-# Test sort
-add_guest()
-add_guest()
-add_guest()
-show_guests()
-sort_guests()
-show_guests()
+def show_menu():
+    print("GUEST LIST MANAGER")
+    print("1. Add guest")
+    print("2. Remove guest")
+    print("3. Sort guests")
+    print("4. Show all guests")
+    print("5. Exit")
+
+
+# Main loop
+while True:
+    show_menu()
+    choice = input("Choose an option (1-5): ")
+
+    if choice == "1":
+        add_guest()
+    elif choice == "2":
+        remove_guest()
+    elif choice == "3":
+        sort_guests()
+    elif choice == "4":
+        show_guests()
+    elif choice == "5":
+        print("Bye")
+        break
+    else:
+        print("Invalid, try again")
+
+    input("\nPress Enter to continue...")
