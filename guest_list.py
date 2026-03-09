@@ -8,12 +8,23 @@ def add_guest():
     name = name.strip().title()
 
     if not name:
-        print("Cant add empty name!")
+        print("Can't add empty name!")
     elif name in guests:
         print(f"{name} is already in the list!")
     else:
         guests.append(name)
         print(f"Added {name} to the list")
+
+
+def remove_guest():
+    name = input("Enter name to remove: ")
+    name = name.strip().title()
+
+    if name in guests:
+        guests.remove(name)
+        print(f"Removed {name} from the list")
+    else:
+        print(f"{name} not found in the list")
 
 
 def show_guests():
@@ -27,4 +38,6 @@ def show_guests():
 
 # Test
 add_guest()
+show_guests()
+remove_guest()
 show_guests()
