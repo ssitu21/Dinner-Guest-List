@@ -27,6 +27,11 @@ def remove_guest():
         print(f"{name} not found in the list")
 
 
+def sort_guests():
+    guests.sort()
+    print("Guest list sorted!")
+
+
 def show_guests():
     if not guests:
         print("Guest list is empty")
@@ -36,8 +41,10 @@ def show_guests():
             print(f"{i}. {guest}")
 
 
-# Test
+# Test sort
+add_guest()
+add_guest()
 add_guest()
 show_guests()
-remove_guest()
+sort_guests()
 show_guests()
