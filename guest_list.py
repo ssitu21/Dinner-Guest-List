@@ -41,19 +41,42 @@ def show_guests():
             print(f"{i}. {guest}")
 
 
+def show_invitations():
+    if not guests:
+        print("No guests to invite!")
+        return
+
+    print("\n" + "=" * 40)
+    print("INVITATIONS")
+    print("=" * 40)
+
+    for guest in guests:
+        print(
+            f"""
+Dear {guest},
+
+You're invited to dinner at Shawn's Reception Hall!
+Date: December 14th, 2030
+Time: 6:00 PM   
+"""
+        )
+        input("Press Enter for next invitation...")
+
+
 def show_menu():
-    print("GUEST LIST MANAGER")
+    print("GUESST LIST MANAGER")
     print("1. Add guest")
     print("2. Remove guest")
     print("3. Sort guests")
     print("4. Show all guests")
-    print("5. Exit")
+    print("5. Show invitations")
+    print("6. Exit")
 
 
 # Main loop
 while True:
     show_menu()
-    choice = input("Choose an option (1-5): ")
+    choice = input("Choose an option  between (1-6): ")
 
     if choice == "1":
         add_guest()
@@ -64,9 +87,11 @@ while True:
     elif choice == "4":
         show_guests()
     elif choice == "5":
-        print("Bye")
+        show_invitations()
+    elif choice == "6":
+        print("Goodbye!")
         break
     else:
-        print("Invalid, try again")
+        print("Invalid choice, try again")
 
     input("\nPress Enter to continue...")
