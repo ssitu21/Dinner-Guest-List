@@ -60,11 +60,10 @@ Date: December 14th, 2030
 Time: 6:00 PM   
 """
         )
-        input("Press Enter for next invitation...")
 
 
 def show_menu():
-    print("GUESST LIST MANAGER")
+    print("\nGUEST LIST MANAGER")
     print("1. Add guest")
     print("2. Remove guest")
     print("3. Sort guests")
@@ -73,25 +72,29 @@ def show_menu():
     print("6. Exit")
 
 
-# Main loop
-while True:
-    show_menu()
-    choice = input("Choose an option  between (1-6): ")
+def main():
+    """Main program function"""
+    while True:
+        show_menu()
+        choice = input("Choose an option between (1-6): ")
 
-    if choice == "1":
-        add_guest()
-    elif choice == "2":
-        remove_guest()
-    elif choice == "3":
-        sort_guests()
-    elif choice == "4":
-        show_guests()
-    elif choice == "5":
-        show_invitations()
-    elif choice == "6":
-        print("Goodbye!")
-        break
-    else:
-        print("Invalid choice, try again")
+        if choice == "1":
+            add_guest()
+        elif choice == "2":
+            remove_guest()
+        elif choice == "3":
+            sort_guests()
+        elif choice == "4":
+            show_guests()
+        elif choice == "5":
+            show_invitations()
+        elif choice == "6":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice, try again")
 
-    input("\nPress Enter to continue...")
+
+# Run the program
+if __name__ == "__main__":
+    main()
